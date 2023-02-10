@@ -182,7 +182,7 @@ def input_amrparse(s, pos = 0, depth = 0):
             if ne_match:
                 pos = ne_match.end()
                 return pos, node
-
+            print("NEW", s, pos)
             rel_match = REL_LABEL_AMR.match(s, pos)
             if rel_match:
                 pos = rel_match.end()
