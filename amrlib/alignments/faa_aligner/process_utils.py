@@ -70,8 +70,10 @@ def get_lineartok_with_rel(lines, f_stopwords):
         line = line.strip().lower()
         count += 1
         _, amr = input_amrparse(line)
-        print(amr)
-        t_list = getterminal_except_ne(amr, amr.get_nonterm_nodes())
+        try:
+            t_list = getterminal_except_ne(amr, amr.get_nonterm_nodes())
+        except:
+            return ['[ERR]'], ['[ERR]']
         amr_linear_lines.append(' '.join(i[-1] for i in t_list))
         amr_tuple_lines.append(' '.join('__'.join(i) for i in t_list))
     return amr_linear_lines, amr_tuple_lines
