@@ -195,9 +195,9 @@ def input_amrparse(s, pos = 0, depth = 0):
                 node.feats.append(Feat(rel, newnode))
                 newnode.pi, newnode.pi_edge = node, rel
             else:
-#                 print('does not match ne or rel, pos %d' % pos)
-                print('pos:', pos, '***', 's:',s)
-                print()
+                print('does not match ne or rel, pos %d' % pos)
+#                 print('pos:', pos, '***', 's:',s)
+#                 print()
                 return pos, None
     return pos, None
 
