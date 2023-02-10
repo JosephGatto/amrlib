@@ -33,7 +33,9 @@ class FAA_Aligner(object):
     def align_sents(self, space_tok_sents, graph_strings):
         assert len(space_tok_sents) == len(graph_strings)
         graph_strings = [to_graph_line(g) for g in graph_strings]
+        print("graph_strings_made")
         data = preprocess_infer(space_tok_sents, graph_strings, skip_empty_check=True)
+        print("preprocess_infer_complete")
         # Filter lines for empty strings.  The aligner doesn't return a value for blanks on either eng or amr
         skips, eng_lines, amr_lines = set(), [], []
         for i, (eng_l, amr_l) in enumerate(zip(data.eng_preproc_lines, data.amr_preproc_lines)):
