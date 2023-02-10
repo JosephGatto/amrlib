@@ -45,6 +45,7 @@ def preprocess_infer(eng_lines, amr_lines, **kwargs):
             token = token.replace('"', '')
             token = stem_4_letters_word(token).strip()
             new_tokens.append(token)
+        assert len(new_tokens) > 0, print('FILTERING ERROR')
         amr_preproc_lines.append(' '.join(new_tokens))
 
     # Gather the data
