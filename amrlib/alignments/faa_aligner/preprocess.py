@@ -31,7 +31,7 @@ def preprocess_infer(eng_lines, amr_lines, **kwargs):
     eng_preproc_lines = [stem_4_letters_line(l) for l in eng_tok_filtered_lines]
 
     # Process the AMR data / remove stopwords
-    print("right before get linear tok with rel", len(amr_lines, len(amr_sw_fn))
+    print("right before get linear tok with rel", len(amr_lines), len(amr_sw_fn))
     print(amr_lines)
     print(amr_sw_fn)
     amr_linear_lines, amr_tuple_lines = get_lineartok_with_rel(amr_lines, amr_sw_fn)
