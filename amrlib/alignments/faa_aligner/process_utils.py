@@ -35,7 +35,7 @@ def filter_eng_by_stopwords(lines, f_stopwords):
 
 #### get_lineartok_with_rel.py ####
 def get_lineartok_with_rel(lines, f_stopwords):
-    print(lines, f_stopwords)
+
     ind = -1
     def getterminal_except_ne(amr, nt_list):
         nonlocal ind    # allow modification of variable in outer function
