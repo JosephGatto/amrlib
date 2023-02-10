@@ -35,6 +35,7 @@ def filter_eng_by_stopwords(lines, f_stopwords):
 
 #### get_lineartok_with_rel.py ####
 def get_lineartok_with_rel(lines, f_stopwords):
+    print(lines, f_stopwords)
     ind = -1
     def getterminal_except_ne(amr, nt_list):
         nonlocal ind    # allow modification of variable in outer function
@@ -57,6 +58,7 @@ def get_lineartok_with_rel(lines, f_stopwords):
             else:
                 if f.edge not in STOP_SET:
                     ret.append((amr.val, f.edge))
+
                 ret.extend(getterminal_except_ne(f.node, nt_list))
         return (ret)
     with open(f_stopwords) as f:
